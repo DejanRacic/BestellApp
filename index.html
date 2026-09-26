@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BurgerHouse BestellApp - Burger, Pizza und Salate online bestellen.">
+  <title>BurgerHouse | BestellApp</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="#top" aria-label="Zur Startseite">
+      <span class="brand__icon">♨</span>
+      <span>Bestell<br>App</span>
+    </a>
+    <button class="menu-button" type="button" aria-label="Menü"><span></span><span></span><span></span></button>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Restaurant Titelbild">
+      <img src="assets/img/hero.webp" alt="Frische Burger und Pizza auf einem gedeckten Tisch">
+    </section>
+
+    <section class="restaurant max-width">
+      <img class="restaurant__logo" src="assets/img/restaurant-logo.png" alt="BurgerHouse Logo">
+      <div class="restaurant__rating"><span>★</span> 4,1 <small>(317)</small></div>
+      <h1><span>Burger</span>House</h1>
+      <p>The best of Burgers, Pizza, and Greens, all in one great place.</p>
+      <div class="restaurant__facts">
+        <span>🕒 30-40 min</span><span>🚚 Delivery 4,99 €</span><span>💳 Min. 10,00 €</span>
+      </div>
+    </section>
+
+    <nav class="category-nav" aria-label="Gerichtskategorien">
+      <div class="category-nav__inner max-width" id="categoryNav"></div>
+    </nav>
+
+    <div class="layout max-width">
+      <section class="menu" id="menu" aria-label="Gerichte"></section>
+      <aside class="basket basket--desktop" id="desktopBasket" aria-label="Warenkorb"></aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner max-width">
+      <span>© 2026 BurgerHouse</span>
+      <div><a href="#">Imprint</a><a href="#">Cookie Preferences</a></div>
+    </div>
+  </footer>
+
+  <button class="mobile-basket-button" id="mobileBasketButton" type="button" aria-label="Warenkorb öffnen">
+    <span>🛒 Warenkorb</span><strong id="mobileBasketTotal">0,00 €</strong>
+  </button>
+
+  <dialog class="basket-dialog" id="basketDialog">
+    <div class="basket-dialog__top">
+      <strong>Dein Warenkorb</strong>
+      <button class="icon-button" id="closeBasketButton" type="button" aria-label="Warenkorb schließen">×</button>
+    </div>
+    <div id="mobileBasket"></div>
+  </dialog>
+
+  <div class="order-message" id="orderMessage" role="status" aria-live="polite">
+    <button class="icon-button" id="closeMessageButton" type="button" aria-label="Meldung schließen">×</button>
+    <span class="order-message__icon">✓</span>
+    <h2>Bestellung bestätigt!</h2>
+    <p>Dein Essen ist unterwegs.</p>
+  </div>
+</body>
+</html>
