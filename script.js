@@ -1,3 +1,4 @@
+// Gerichte und Kategorien
 const meals = [
   { id: 1, category: "burger", name: "Veggie mushroom black burger", description: "Mixed green salad, Tomatoes, Edamame, Mushrooms", price: 16.90, image: "assets/img/burger-veggie.webp" },
   { id: 2, category: "burger", name: "All meat burger", description: "Beef, Bacon, Dill pickles, Smoked cheese, Ketchup, BBQ sauce", price: 15.90, image: "assets/img/burger-meat.webp" },
@@ -22,6 +23,7 @@ const categories = [
 const deliveryFee = 4.99;
 const cart = {};
 
+// Hilfsfunktionen und HTML-Templates
 function formatPrice(value) {
   return `${value.toFixed(2).replace(".", ",")} €`;
 }
@@ -44,6 +46,7 @@ function categoryLinkTemplate(category) {
   return `<a class="category-link" href="#${category.id}">${category.title}</a>`;
 }
 
+// Warenkorb berechnen und darstellen
 function cartItemTemplate(meal) {
   return `<article class="basket-item"><button class="delete-button" data-delete="${meal.id}" type="button" aria-label="${meal.name} löschen">×</button><span class="basket-item__name">${cart[meal.id]} x ${meal.name}</span><div class="basket-item__row"><div class="quantity"><button data-minus="${meal.id}" type="button">−</button><strong>${cart[meal.id]}</strong><button data-plus="${meal.id}" type="button">+</button></div><strong>${formatPrice(meal.price * cart[meal.id])}</strong></div></article>`;
 }
@@ -91,6 +94,7 @@ function updateAddButton(button) {
   button.classList.toggle("added", Boolean(quantity));
 }
 
+// Änderungen am Warenkorb
 function addMeal(id) {
   cart[id] = (cart[id] || 0) + 1;
   renderBaskets();
@@ -119,6 +123,7 @@ function closeBasketDialog() {
   if (dialog.open) dialog.close();
 }
 
+// Bestellbestätigung
 function showOrderMessage() {
   const message = document.getElementById("orderMessage");
   message.classList.add("show");
@@ -130,6 +135,7 @@ function hideOrderMessage() {
   document.getElementById("orderMessage").classList.remove("show");
 }
 
+// Events und Start der App
 function handleAction(event) {
   const button = event.target.closest("button");
   if (!button) return;

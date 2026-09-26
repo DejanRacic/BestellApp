@@ -43,6 +43,10 @@ Weitere sinnvolle Commit-Messages:
 - CSS3
 - Vanilla JavaScript
 
+## Dokumentation
+
+Eine ausführliche Erklärung der Dateien und Funktionen steht unter `docs/PROJEKT-DOKUMENTATION.md`. Die Zuordnung aller Bilder steht in `docs/BILDER.md`.
+
 ## Autor
 
 Dejan Racic
